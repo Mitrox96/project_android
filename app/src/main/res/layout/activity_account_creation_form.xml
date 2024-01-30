@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AccountCreationFormActivity">
+
+    <include
+        layout="@layout/layout_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <EditText
+        android:id="@+id/editTextFirstName"
+        style="@style/EditTextEpsi"
+        android:hint="@string/editTextFirstName"/>
+
+    <EditText
+        android:id="@+id/editTextName"
+        style="@style/EditTextEpsi"
+        android:hint="@string/editTextName"/>
+
+    <EditText
+        android:id="@+id/editTextEmail"
+        style="@style/EditTextEpsi"
+        android:hint="@string/editTextEmail"
+        android:inputType="textEmailAddress"/>
+
+    <EditText
+        android:id="@+id/editTextAddress"
+        style="@style/EditTextEpsi"
+        android:hint="@string/editTextAddress"/>
+
+    <EditText
+        android:id="@+id/editTextPostalCode"
+        style="@style/EditTextEpsi"
+        android:hint="@string/editTextPostalCode"/>
+
+    <EditText
+        android:id="@+id/editTextCity"
+        style="@style/EditTextEpsi"
+        android:hint="@string/editTextCity"/>
+
+    <EditText
+        android:id="@+id/editTextFidelityCard"
+        style="@style/EditTextEpsi"
+        android:hint="@string/editTextFidelityCard"/>
+
+
+    <Button
+        android:id="@+id/buttonCreate"
+        android:layout_gravity="center_horizontal"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:text="@string/buttonTextCreate" />
+
+
+
+</LinearLayout>
