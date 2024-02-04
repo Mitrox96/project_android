@@ -13,6 +13,7 @@
         android:layout_height="wrap_content" />
 
     <EditText
+        android:layout_marginTop="30dp"
         android:id="@+id/editTextFirstName"
         style="@style/EditTextEpsi"
         android:hint="@string/editTextFirstName"/>
@@ -50,7 +51,8 @@
 
 
     <Button
-        android:id="@+id/buttonCreate"
+        android:layout_marginTop="70dp"
+        android:id="@+id/buttonCreateAccount"
         android:layout_gravity="center_horizontal"
         android:layout_width="250dp"
         android:layout_height="wrap_content"

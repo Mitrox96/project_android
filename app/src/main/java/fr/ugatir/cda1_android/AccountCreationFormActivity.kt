@@ -1,38 +1,84 @@
 package fr.ugatir.cda1_android
 
 import android.content.Context
+import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
+import android.view.View
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageView
+import android.widget.TextView
+import android.widget.Toast
 
 class AccountCreationFormActivity : BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_create)
+        setContentView(R.layout.activity_account_creation_form)
+        val receivedBooleanCreateAccountForm = intent.getBooleanExtra("CREATE_KEY", false)
 
+        val imageViewSettings = findViewById<ImageView>(R.id.imageViewSettings)
+        imageViewSettings.visibility = View.INVISIBLE
+
+        val textViewTitle = findViewById<TextView>(R.id.textViewTitle)
+        val buttonSaveModifications = findViewById<Button>(R.id.buttonCreateAccount)
+        textViewTitle.text = "Création de compte"
         setHeaderTitle(getString(R.string.txtCreate))
         showBack()
 
-        val edEmail = findViewById<EditText>(R.id.editTextEmail)
-        val edNom = findViewById<EditText>(R.id.editTextName)
-        val edAdrees = findViewById<EditText>(R.id.editTextAddress)
+        val editTextFirstName = findViewById<EditText>(R.id.editTextFirstName)
+        val editTextName = findViewById<EditText>(R.id.editTextName)
+        val editTextEmail = findViewById<EditText>(R.id.editTextEmail)
+        val editTextAddress = findViewById<EditText>(R.id.editTextAddress)
+        val editTextPostalCode = findViewById<EditText>(R.id.editTextPostalCode)
+        val editTextCity = findViewById<EditText>(R.id.editTextCity)
+        val editTextFidelityCard = findViewById<EditText>(R.id.editTextFidelityCard)
 
-        edEmail.setText(readSharedPref("email"))
-        edNom.setText(readSharedPref("nom"))
-        edAdrees.setText(readSharedPref("address"))
+        editTextFirstName.setText(readSharedPref("firstName"))
+        editTextName.setText(readSharedPref("name"))
+        editTextEmail.setText(readSharedPref("email"))
+        editTextAddress.setText(readSharedPref("address"))
+        editTextPostalCode.setText(readSharedPref("postalCode"))
+        editTextCity.setText(readSharedPref("city"))
+        editTextFidelityCard.setText(readSharedPref("fidelityCard"))
 
-        val buttonCreate = findViewById<Button>(R.id.buttonCreate)
+        if (
+            !receivedBooleanCreateAccountForm
+        ){
+            textViewTitle.text = "Mon compte"
+            buttonSaveModifications.text = "Enregistrer les modifications"
+        }
+        val buttonCreate = findViewById<Button>(R.id.buttonCreateAccount)
 
         buttonCreate.setOnClickListener {
-            writeSharedPref("email", edEmail.text.toString())
-            writeSharedPref("nom", edNom.text.toString())
-            writeSharedPref("address", edAdrees.text.toString())
+            if (editTextFirstName.length() != 0 &&
+                editTextName.length() != 0 &&
+                editTextEmail.length() != 0 &&
+                editTextAddress.length() != 0 &&
+                editTextPostalCode.length() != 0 &&
+                editTextCity.length() != 0 &&
+                editTextFidelityCard.length() != 0
+            ) {
+            writeSharedPref("firstName", editTextFirstName.text.toString())
+            writeSharedPref("name", editTextName.text.toString())
+            writeSharedPref("email", editTextEmail.text.toString())
+            writeSharedPref("address", editTextAddress.text.toString())
+            writeSharedPref("postalCode", editTextPostalCode.text.toString())
+            writeSharedPref("city", editTextCity.text.toString())
+            writeSharedPref("fidelityCard", editTextFidelityCard.text.toString())
 
-            // Ajoutez ici le code pour traiter la création du compte
-            // par exemple, vous pourriez appeler une fonction pour envoyer les données à votre backend
+            startActivity(Intent(this,HomeActivity::class.java))
+            finish()
+            }
+            else
+            {
+                showValidationError(this)
+            }
         }
+    }
+    private fun showValidationError(context: Context) {
+        Toast.makeText(context, "Veuillez renseigner toutes les informations", Toast.LENGTH_SHORT).show()
     }
 
     fun writeSharedPref(key: String, value: String) {

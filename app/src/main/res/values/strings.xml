@@ -13,14 +13,14 @@
     <string name="txtNom">Nom</string>
     <string name="txtStudents">Students</string>
     <string name="txtStudentsWs">Students WS</string>
-    <string name="txtCreate">Create</string>
+    <string name="txtCreate">Création de compte</string>
     <string name="txtTabbar">Tabbar</string>
     <string name="txtTab1">Tab1</string>
     <string name="txtTab2">Tab2</string>
     <string name="txtTab3">Tab3</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="txtAccountCreation">Création de compte</string>
+    <string name="txtHome">Accueil</string>
     <string name="txtQrCode">QRCode</string>
     <string name="txtFillOutTheFormManually">Remplir le formulaire manuellement</string>
     <string name="editTextName">Nom</string>
@@ -31,4 +31,5 @@
     <string name="editTextCity">Ville</string>
     <string name="editTextFidelityCard">Carte de fidélité</string>
     <string name="buttonTextCreate">Créer</string>
+    <string name="buttonModifyAccount">Enregistrer les modifications</string>
 </resources>

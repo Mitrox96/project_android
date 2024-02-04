@@ -5,9 +5,17 @@
     android:layout_height="match_parent">
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:background="@color/holo_red_light"
+        android:layout_height="70dp"
+        android:background="@color/default_color"
         >
+        <ImageView
+            android:id="@+id/imageViewSettings"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="10dp"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/settings_button" />
         <TextView
             android:id="@+id/textViewTitle"
             android:layout_width="wrap_content"
@@ -15,8 +23,7 @@
             android:layout_centerInParent="true"
             android:textColor="@color/white"
             android:textSize="20sp"
-            android:textStyle="bold"
-            android:text="@string/txtTitle"/>
+            android:textStyle="bold"/>
         <ImageView
             android:id="@+id/imageViewBack"
             android:visibility="gone"
