@@ -1,20 +1,20 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Base.Theme.CDA1Android" parent="Theme.Material3.DayNight.NoActionBar">
+    <style name="Base.Theme.DefaultTheme" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
     </style>
 
-    <style name="Theme.CDA1Android" parent="Base.Theme.CDA1Android" />
+    <style name="Theme.DefaultTheme" parent="Base.Theme.DefaultTheme" />
 
     <style name="EditTextEpsi" parent="Widget.AppCompat.EditText">
         <item name="android:layout_gravity">center_horizontal</item>
         <item name="android:layout_width">300dp</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:textColor">@color/holo_red_light</item>
+        <item name="android:textColor">@color/holo_blue_dark</item>
         <item name="android:textSize">20sp</item>
     </style>
-    
+
     <style name="ButtonHomeEpsi" parent="Widget.AppCompat.Button">
         <item name="android:layout_height">150dp</item>
         <item name="android:layout_width">150dp</item>

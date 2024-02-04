@@ -3,11 +3,21 @@ package fr.ugatir.cda1_android
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
+import android.widget.ImageView
+import android.widget.TextView
 
 class HomeActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
+        val textViewTitle = findViewById<TextView>(R.id.textViewTitle)
+        textViewTitle.text = "Accueil"
+
+        val createForm = false
+        val imageViewSettings = findViewById<ImageView>(R.id.imageViewSettings)
+        imageViewSettings.setOnClickListener {
+            startActivity(Intent(this,AccountCreationFormActivity::class.java).putExtra("CREATE_KEY", createForm))
+        }
         val buttonPhotos=findViewById<Button>(R.id.buttonPhotos)
         buttonPhotos.setOnClickListener {
             startActivity(Intent(this,PhotosActivity::class.java))
@@ -33,14 +43,9 @@ class HomeActivity : BaseActivity() {
             startActivity(Intent(this,StudentWsActivity::class.java))
         }
 
-        val buttonCreate=findViewById<Button>(R.id.buttonCreate)
-        buttonCreate.setOnClickListener {
-            startActivity(Intent(this,CreateActivity::class.java))
-        }
-
         val buttonTabbar=findViewById<Button>(R.id.buttonTabbar)
         buttonTabbar.setOnClickListener {
-            startActivity(Intent(this,TabbarActivity::class.java))
+            startActivity(Intent(this,AccountCreationFormActivity::class.java))
         }
     }
 }
