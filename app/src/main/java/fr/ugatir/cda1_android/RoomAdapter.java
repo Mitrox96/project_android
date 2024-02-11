@@ -1,4 +1,4 @@
-package fr.ugatir.cda1_android;
+package fr.ugatir.cdal_android;
 
 import android.content.Context;
 import android.view.LayoutInflater;
