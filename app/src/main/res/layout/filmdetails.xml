@@ -25,3 +25,4 @@
             android:layout_weight="1"
             tools:srcCompat="@tools:sample/backgrounds/scenic" />
     </LinearLayout>
+    </LinearLayout>
