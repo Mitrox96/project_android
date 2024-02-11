@@ -50,7 +50,7 @@ class Tab1Fragment : Fragment() {
             Toast.makeText(activity,editTextTextEmailAddress.text.toString()+"/"+editTextTextPassword.text.toString(),
                 Toast.LENGTH_LONG).show()
         })
-        (activity as TabbarActivity).setHeaderTitle(getString(R.string.txtTab1))
+        (activity as InfoActivity).setHeaderTitle(getString(R.string.txtTab1))
     }
 
     companion object {

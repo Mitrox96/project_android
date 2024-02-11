@@ -42,7 +42,7 @@ class Tab2Fragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        (activity as TabbarActivity).setHeaderTitle(getString(R.string.txtTab2))
+        (activity as InfoActivity).setHeaderTitle(getString(R.string.txtTab2))
         val students= arrayListOf<Student>()
         val jsStudents= JSONObject((activity?.application as AppEpsi).data)
         val jsArrayStudents= jsStudents.getJSONArray("items")

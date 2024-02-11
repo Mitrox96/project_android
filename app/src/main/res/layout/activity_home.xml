@@ -18,14 +18,16 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
+
+        <Button
+            android:id="@+id/buttonTabbar"
+            style="@style/ButtonHomeEpsi"
+            android:layout_width="372dp"
+            android:text="@string/txtTabbar" />
     <Button
         android:id="@+id/buttonPhotos"
         style="@style/ButtonHomeEpsi"
         android:text="@string/txtPhotos" />
-    <Button
-        android:id="@+id/buttonRoll"
-        style="@style/ButtonHomeEpsi"
-        android:text="@string/txtRoll" />
 
     <Button
         android:id="@+id/buttonLogin"
@@ -36,17 +38,10 @@
         style="@style/ButtonHomeEpsi"
         android:text="@string/txtStudents" />
         <Button
-            android:id="@+id/buttonStudentsWs"
-            style="@style/ButtonHomeEpsi"
-            android:text="@string/txtStudentsWs" />
-        <Button
             android:id="@+id/buttonCreate"
             style="@style/ButtonHomeEpsi"
             android:text="@string/txtCreate" />
-        <Button
-            android:id="@+id/buttonTabbar"
-            style="@style/ButtonHomeEpsi"
-            android:text="@string/txtTabbar" />
+
     </LinearLayout>
 </ScrollView>
 </LinearLayout>

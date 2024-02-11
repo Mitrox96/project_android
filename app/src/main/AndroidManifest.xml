@@ -21,59 +21,65 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.DefaultTheme"
-     tools:targetApi="31">
-     <activity
-         android:name=".ScannerQrCodeActivity"
-         android:exported="false"
-         android:screenOrientation="portrait"/>
-     <activity
-         android:name=".AccountCreationFormActivity"
-         android:exported="false"
-         android:screenOrientation="portrait"/>
-     <activity
-         android:name=".AccountCreationActivity"
-         android:exported="false"
-         android:screenOrientation="portrait"/>
+        tools:targetApi="31">
+        <activity
+            android:name=".GenerateQRActivity"
+            android:exported="false" />
+        <activity
+            android:name=".QrCodeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ScannerQrCodeActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".AccountCreationFormActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".AccountCreationActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
 
-     <meta-data
-         android:name="com.google.android.geo.API_KEY"
-         android:value="AIzaSyAdwxyyyZSkEgW97DZxS6ev2KRpruYeTlQ" />
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyAdwxyyyZSkEgW97DZxS6ev2KRpruYeTlQ" />
 
-     <activity
-         android:name=".TabbarActivity"
-         android:exported="false" />
-     <activity
-         android:name=".StudentWsActivity"
-         android:exported="false" />
-     <activity
-         android:name=".StudentActivity"
-         android:exported="false" />
-     <activity
-         android:name=".LoginActivity"
-         android:exported="false" />
-     <activity
-         android:name=".RollDiceActivity"
-         android:exported="false" />
-     <activity
-         android:name=".HomeActivity"
-         android:exported="false"
-         android:screenOrientation="portrait"/>
-     <activity
-         android:name=".ImageActivity"
-         android:exported="false" />
-     <activity
-         android:name=".SplashActivity"
-         android:exported="true"
-         android:screenOrientation="portrait">
-         <intent-filter>
-             <action android:name="android.intent.action.MAIN" />
+        <activity
+            android:name=".InfoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".StudentWsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".StudentActivity"
+            android:exported="false" />
+        <activity
+            android:name=".LoginActivity"
+            android:exported="false" />
+        <activity
+            android:name=".RollDiceActivity"
+            android:exported="false" />
+        <activity
+            android:name=".HomeActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ImageActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SplashActivity"
+            android:exported="true"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-             <category android:name="android.intent.category.LAUNCHER" />
-         </intent-filter>
-     </activity>
-     <activity
-         android:name=".PhotosActivity"
-         android:exported="false" />
- </application>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".PhotosActivity"
+            android:exported="false" />
+    </application>
 
 </manifest>

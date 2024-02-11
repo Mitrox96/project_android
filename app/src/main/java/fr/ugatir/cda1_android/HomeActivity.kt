@@ -23,10 +23,6 @@ class HomeActivity : BaseActivity() {
             startActivity(Intent(this,PhotosActivity::class.java))
         }
 
-        val buttonRoll=findViewById<Button>(R.id.buttonRoll)
-        buttonRoll.setOnClickListener {
-            startActivity(Intent(this,RollDiceActivity::class.java))
-        }
 
         val buttonLogin=findViewById<Button>(R.id.buttonLogin)
         buttonLogin.setOnClickListener {
@@ -35,13 +31,9 @@ class HomeActivity : BaseActivity() {
 
         val buttonStudents=findViewById<Button>(R.id.buttonStudents)
         buttonStudents.setOnClickListener {
-            startActivity(Intent(this,StudentActivity::class.java))
+            startActivity(Intent(this, GenerateQRActivity::class.java))
         }
 
-        val buttonStudentsWs=findViewById<Button>(R.id.buttonStudentsWs)
-        buttonStudentsWs.setOnClickListener {
-            startActivity(Intent(this,StudentWsActivity::class.java))
-        }
 
         val buttonTabbar=findViewById<Button>(R.id.buttonTabbar)
         buttonTabbar.setOnClickListener {

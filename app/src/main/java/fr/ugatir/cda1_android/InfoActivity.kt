@@ -3,7 +3,7 @@ package fr.ugatir.cda1_android
 import android.os.Bundle
 import android.widget.TextView
 
-class TabbarActivity : BaseActivity() {
+class InfoActivity : BaseActivity() {
 
     val tab1Fragment= Tab1Fragment.newInstance("","")
     val tab2Fragment= Tab2Fragment.newInstance("","")
