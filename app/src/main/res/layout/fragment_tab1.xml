@@ -1,18 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/holo_gray_light"
-    tools:context=".Tab1Fragment">
-
-    <ScrollView
+    android:orientation="vertical"
+    tools:context=".InfoActivity">
+    <include
+        layout="@layout/layout_header"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-        <include
-            layout="@layout/layout_login"
+        android:layout_height="wrap_content" />
+    <RelativeLayout
+        android:id="@+id/layoutContent"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+    </RelativeLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:background="@color/holo_gray_light"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/textViewTab1"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-    </ScrollView>
-
-</FrameLayout>
+            android:layout_height="match_parent"
+            style="@style/TextTabbar"
+            android:text="@string/txtTab1"/>
+        <TextView
+            android:id="@+id/textViewTab2"
+            style="@style/TextTabbar"
+            android:background="@color/holo_blue_light"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/txtTab2"/>
+        <TextView
+            android:id="@+id/textViewTab3"
+            style="@style/TextTabbar"
+            android:background="@color/holo_orange_light"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/txtTab3"/>
+        <TextView
+            android:id="@+id/textViewTab4"
+            style="@style/TextTabbar"
+            android:background="@color/holo_orange_light"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/txtTab3"/>
+    </LinearLayout>
+</LinearLayout>
