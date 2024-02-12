@@ -35,6 +35,9 @@ Pour avoir la partie fonctionnelle, voir les commits qui datent du 4 février ou
 ---------------------------------------------------------------------------------------------------------------------------------------------------
 
 Mitrox96 = Damien LOUBIOU : **première partie** (Splash + page création compte + remplir formulaire manuellement + scan qrcode + modifier compte + design + home(bouton modifier compte))
+
 Matelop132 = Matéo LO PINTO : **deuxième partie**  (Logo + nettoyage + afficher qrcode + fragment correspondant)
-Dorianov = Dorian GRONER: **deuxième partie** (Finition webservice + Panier + Design + résolution de bugs + fragments)
+
+Dorianov = Dorian GRONER: **deuxième partie** (Finition webservice + Panier + Design + résolution de bugs + fragments + details)
+
 Noah PIESSE pas précisé sur les commits car sa partie a été envoyée à Dorian à cause de problèmes techniques, donc Dorian a push sa partie et celle de Noah) : **deuxième partie** (Map + details + webservice + fragments)
