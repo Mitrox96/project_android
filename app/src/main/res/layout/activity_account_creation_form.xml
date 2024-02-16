@@ -19,9 +19,9 @@
         android:hint="@string/editTextFirstName"/>
 
     <EditText
-        android:id="@+id/editTextName"
+        android:id="@+id/editTextLastName"
         style="@style/EditTextEpsi"
-        android:hint="@string/editTextName"/>
+        android:hint="@string/editTextLastName"/>
 
     <EditText
         android:id="@+id/editTextEmail"
@@ -35,9 +35,9 @@
         android:hint="@string/editTextAddress"/>
 
     <EditText
-        android:id="@+id/editTextPostalCode"
+        android:id="@+id/editTextZipCode"
         style="@style/EditTextEpsi"
-        android:hint="@string/editTextPostalCode"/>
+        android:hint="@string/editTextZipCode"/>
 
     <EditText
         android:id="@+id/editTextCity"
@@ -45,9 +45,9 @@
         android:hint="@string/editTextCity"/>
 
     <EditText
-        android:id="@+id/editTextFidelityCard"
+        android:id="@+id/editTextCardRef"
         style="@style/EditTextEpsi"
-        android:hint="@string/editTextFidelityCard"/>
+        android:hint="@string/editTextCardRef"/>
 
 
     <Button

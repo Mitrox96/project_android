@@ -22,13 +22,19 @@
     <string name="txtHome">Accueil</string>
     <string name="txtQrCode">QRCode</string>
     <string name="txtFillOutTheFormManually">Remplir le formulaire manuellement</string>
-    <string name="editTextName">Nom</string>
+    <string name="editTextLastName">Nom</string>
     <string name="editTextEmail">Email</string>
     <string name="editTextFirstName">Prénom</string>
     <string name="editTextAddress">Adresse</string>
-    <string name="editTextPostalCode">Code Postal</string>
+    <string name="editTextZipCode">Code Postal</string>
     <string name="editTextCity">Ville</string>
-    <string name="editTextFidelityCard">Carte de fidélité</string>
+    <string name="editTextCardRef">Carte de fidélité</string>
     <string name="buttonTextCreate">Créer</string>
     <string name="buttonModifyAccount">Enregistrer les modifications</string>
+    <string name="my_card">Ma carte</string>
+    <string name="cart">Panier</string>
+    <string name="rooms">Salles</string>
+    <string name="movies">Films</string>
+    <string name="firtName">Prénom</string>
+    <string name="lastName">Nom</string>
 </resources>

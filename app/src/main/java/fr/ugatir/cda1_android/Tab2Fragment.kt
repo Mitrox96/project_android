@@ -1,4 +1,4 @@
-package fr.ugatir.cdal_android; // Remplacez avec le nom de votre package
+/*package fr.ugatir.cdal_android; // Remplacez avec le nom de votre package
 
 import android.os.Bundle;
 import android.widget.Toast;
@@ -62,3 +62,4 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 }
+*/

@@ -1,4 +1,4 @@
-package fr.ugatir.cda1_android
+/*package fr.ugatir.cda1_android
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -126,4 +126,4 @@ class Tab3Fragment : Fragment() {
                 }
             }
     }
-}
+}*/

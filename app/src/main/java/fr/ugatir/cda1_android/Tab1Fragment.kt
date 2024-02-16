@@ -1,4 +1,4 @@
-package fr.ugatir.cda1_android
+/*package fr.ugatir.cda1_android
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -52,3 +52,4 @@ class Tab1Fragment : Fragment() {
         }
     }
 }
+*/

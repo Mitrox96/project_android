@@ -1,4 +1,4 @@
-package fr.ugatir.cdal_android; // Remplacez avec le nom de votre package
+/*package fr.ugatir.cdal_android; // Remplacez avec le nom de votre package
 
 import android.os.Bundle;
 import android.widget.Toast;
@@ -14,7 +14,7 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class MainActivity extends AppCompatActivity {
-    private RecyclerView recyclerVi	ew;
+    private RecyclerView recyclerView;
     private RoomAdapter adapter;
     private List<Room> roomList;
 
@@ -62,3 +62,4 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 }
+*/

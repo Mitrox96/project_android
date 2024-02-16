@@ -43,12 +43,12 @@ class ScannerQrCodeActivity : AppCompatActivity() {
             val cardRef = json.getString("cardRef")
 
             writeSharedPref("firstName", firstName.toString())
-            writeSharedPref("name", lastName.toString())
+            writeSharedPref("lastName", lastName.toString())
             writeSharedPref("email", email.toString())
             writeSharedPref("address", address.toString())
-            writeSharedPref("postalCode", zipcode.toString())
+            writeSharedPref("zipcode", zipcode.toString())
             writeSharedPref("city", city.toString())
-            writeSharedPref("fidelityCard", cardRef.toString())
+            writeSharedPref("cardRef", cardRef.toString())
 
             val createForm = true
             startActivity(Intent(this,AccountCreationFormActivity::class.java).putExtra("CREATE_KEY", createForm))

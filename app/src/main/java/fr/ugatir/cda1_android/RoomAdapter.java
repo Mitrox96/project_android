@@ -1,4 +1,4 @@
-package fr.ugatir.cdal_android;
+/*package fr.ugatir.cdal_android;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -51,3 +51,4 @@ public class RoomAdapter extends RecyclerView.Adapter<RoomAdapter.RoomViewHolder
         }
     }
 }
+*/
