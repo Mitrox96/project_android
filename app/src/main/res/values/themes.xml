@@ -29,7 +29,7 @@
         <item name="android:textSize">14sp</item>
     </style>
 
-    <style name="TextTabbar" parent="Widget.AppCompat.TextView">
+    <style name="ButtonFragments" parent="Widget.AppCompat.TextView">
         <item name="android:textSize">20sp</item>
         <item name="android:gravity">center</item>
         <item name="android:layout_weight">1</item>

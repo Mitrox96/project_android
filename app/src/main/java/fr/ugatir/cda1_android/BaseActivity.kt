@@ -11,36 +11,36 @@ open class BaseActivity: AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        Log.d("Espi","############### onCreate ###############"+javaClass.simpleName)
+        Log.d("infoCycles","############### onCreate ###############"+javaClass.simpleName)
     }
 
     override fun onStart() {
         super.onStart()
-        Log.d("Espi","############### onStart ###############"+javaClass.simpleName)
+        Log.d("infoCycles","############### onStart ###############"+javaClass.simpleName)
     }
 
     override fun onStop() {
         super.onStop()
-        Log.d("Espi","############### onStop ###############"+javaClass.simpleName)
+        Log.d("infoCycles","############### onStop ###############"+javaClass.simpleName)
     }
 
     override fun onResume() {
         super.onResume()
-        Log.d("Espi","############### onResume ###############"+javaClass.simpleName)
+        Log.d("infoCycles","############### onResume ###############"+javaClass.simpleName)
     }
 
     override fun onRestart() {
         super.onRestart()
-        Log.d("Espi","############### onRestart ###############"+javaClass.simpleName)
+        Log.d("infoCycles","############### onRestart ###############"+javaClass.simpleName)
     }
 
     override fun onPause() {
         super.onPause()
-        Log.d("Espi","############### onPause ###############"+javaClass.simpleName)
+        Log.d("infoCycles","############### onPause ###############"+javaClass.simpleName)
     }
     override fun onDestroy() {
         super.onDestroy()
-        Log.d("Espi","############### onDestroy ###############"+javaClass.simpleName)
+        Log.d("infoCycles","############### onDestroy ###############"+javaClass.simpleName)
     }
 
 

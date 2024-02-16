@@ -33,12 +33,12 @@ class AccountCreationActivity : AppCompatActivity() {
         val editor = sharedPreferences.edit()
 
         editor.remove("firstName")
-        editor.remove("name")
+        editor.remove("lastName")
         editor.remove("email")
         editor.remove("address")
-        editor.remove("postalCode")
+        editor.remove("zipcode")
         editor.remove("city")
-        editor.remove("fidelityCard")
+        editor.remove("cardRef")
 
         Log.d("SharedPreferences", "After removal: ${sharedPreferences.all}")
         editor.apply()

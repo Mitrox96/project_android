@@ -2,42 +2,80 @@ package fr.ugatir.cda1_android
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 
 class HomeActivity : BaseActivity() {
+
+    val moviesHomeFragment= MoviesHomeFragment.newInstance("","")
+    val roomHomeFragment = RoomHomeFragment.newInstance("","")
+    val myCardHomeFragment = MyCardHomeFragment.newInstance("","")
+    val cartHomeFragment= CartHomeFragment.newInstance("","")
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
         val textViewTitle = findViewById<TextView>(R.id.textViewTitle)
         textViewTitle.text = "Accueil"
 
+        val buttonMyCardHomeFragment= findViewById<TextView>(R.id.textViewMyCard)
+        val moviesHomeFragment = findViewById<TextView>(R.id.textViewMovies)
+        val roomHomeFragment = findViewById<TextView>(R.id.textViewRoomHomeFragment)
+        val cartHomeFragment = findViewById<TextView>(R.id.textViewCartHomeFragment)
+
         val createForm = false
         val imageViewSettings = findViewById<ImageView>(R.id.imageViewSettings)
         imageViewSettings.setOnClickListener {
             startActivity(Intent(this,AccountCreationFormActivity::class.java).putExtra("CREATE_KEY", createForm))
         }
-        val buttonPhotos=findViewById<Button>(R.id.buttonPhotos)
-        buttonPhotos.setOnClickListener {
-            startActivity(Intent(this,PhotosActivity::class.java))
+
+        showMyCardHomeFragment()
+
+       moviesHomeFragment.setOnClickListener {
+           showMoviesHomeFragment()
+       }
+        buttonMyCardHomeFragment.setOnClickListener {
+            showMyCardHomeFragment()
         }
 
-
-        val buttonLogin=findViewById<Button>(R.id.buttonLogin)
-        buttonLogin.setOnClickListener {
-            startActivity(Intent(this,LoginActivity::class.java))
+       roomHomeFragment.setOnClickListener {
+            showRommHomeFragment()
         }
 
-        val buttonStudents=findViewById<Button>(R.id.buttonStudents)
-        buttonStudents.setOnClickListener {
-            startActivity(Intent(this, GenerateQRActivity::class.java))
+        cartHomeFragment.setOnClickListener {
+            showCartHomeFragment()
         }
+    }
 
+    fun showMoviesHomeFragment(){
+      val frManager=supportFragmentManager
+      val fragmentTra= frManager.beginTransaction()
+      fragmentTra.addToBackStack("Tab2")
+      fragmentTra.replace(R.id.layoutHome,moviesHomeFragment)
+      fragmentTra.commit()
+  }
 
-        val buttonTabbar=findViewById<Button>(R.id.buttonTabbar)
-        buttonTabbar.setOnClickListener {
-            startActivity(Intent(this,AccountCreationFormActivity::class.java))
-        }
+    fun showRommHomeFragment(){
+      val frManager=supportFragmentManager
+      val fragmentTra= frManager.beginTransaction()
+      fragmentTra.addToBackStack("Tab2")
+      fragmentTra.replace(R.id.layoutHome,roomHomeFragment)
+      fragmentTra.commit()
+  }
+
+    fun showMyCardHomeFragment(){
+        val frManager=supportFragmentManager
+        val fragmentTra= frManager.beginTransaction()
+        fragmentTra.addToBackStack("MyCardHomeFragment")
+        fragmentTra.replace(R.id.layoutHome,myCardHomeFragment)
+        fragmentTra.commit()
+    }
+
+    fun showCartHomeFragment(){
+        val frManager=supportFragmentManager
+        val fragmentTra= frManager.beginTransaction()
+        fragmentTra.addToBackStack("Tab3")
+        fragmentTra.replace(R.id.layoutHome,cartHomeFragment)
+        fragmentTra.commit()
     }
 }

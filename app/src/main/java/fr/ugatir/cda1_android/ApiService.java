@@ -1,4 +1,4 @@
-package fr.ugatir.cda1_android;
+/*package fr.ugatir.cda1_android;
 
 import retrofit2.Call;
 import retrofit2.http.GET;
@@ -10,3 +10,4 @@ public interface ApiService {
 
 }
 
+*/

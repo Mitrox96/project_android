@@ -6,42 +6,52 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".HomeActivity">
+
     <include
         layout="@layout/layout_header"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
-<ScrollView
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    <RelativeLayout
+        android:id="@+id/layoutHome"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+    </RelativeLayout>
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:layout_height="75dp"
+        android:background="@color/holo_gray_light"
+        android:orientation="horizontal">
 
-        <Button
-            android:id="@+id/buttonTabbar"
-            style="@style/ButtonHomeEpsi"
-            android:layout_width="372dp"
-            android:text="@string/txtTabbar" />
-    <Button
-        android:id="@+id/buttonPhotos"
-        style="@style/ButtonHomeEpsi"
-        android:text="@string/txtPhotos" />
+        <TextView
+            android:id="@+id/textViewMovies"
+            style="@style/ButtonFragments"
+            android:background="@color/holo_blue_light"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/movies"/>
+        <TextView
+            android:id="@+id/textViewRoomHomeFragment"
+            style="@style/ButtonFragments"
+            android:background="@color/holo_red_light"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/rooms"/>
 
-    <Button
-        android:id="@+id/buttonLogin"
-        style="@style/ButtonHomeEpsi"
-        android:text="@string/txtLogin" />
-    <Button
-        android:id="@+id/buttonStudents"
-        style="@style/ButtonHomeEpsi"
-        android:text="@string/txtStudents" />
-        <Button
-            android:id="@+id/buttonCreate"
-            style="@style/ButtonHomeEpsi"
-            android:text="@string/txtCreate" />
+        <TextView
+            android:id="@+id/textViewMyCard"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            style="@style/ButtonFragments"
+            android:text="@string/my_card"/>
+        <TextView
+            android:id="@+id/textViewCartHomeFragment"
+            style="@style/ButtonFragments"
+            android:background="@color/holo_red_light"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/cart"/>
 
     </LinearLayout>
-</ScrollView>
 </LinearLayout>

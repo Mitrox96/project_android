@@ -28,20 +28,20 @@ class AccountCreationFormActivity : BaseActivity() {
         showBack()
 
         val editTextFirstName = findViewById<EditText>(R.id.editTextFirstName)
-        val editTextName = findViewById<EditText>(R.id.editTextName)
+        val editTextLastName = findViewById<EditText>(R.id.editTextLastName)
         val editTextEmail = findViewById<EditText>(R.id.editTextEmail)
         val editTextAddress = findViewById<EditText>(R.id.editTextAddress)
-        val editTextPostalCode = findViewById<EditText>(R.id.editTextPostalCode)
+        val editTextZipCode = findViewById<EditText>(R.id.editTextZipCode)
         val editTextCity = findViewById<EditText>(R.id.editTextCity)
-        val editTextFidelityCard = findViewById<EditText>(R.id.editTextFidelityCard)
+        val editTextCardRef = findViewById<EditText>(R.id.editTextCardRef)
 
         editTextFirstName.setText(readSharedPref("firstName"))
-        editTextName.setText(readSharedPref("name"))
+        editTextLastName.setText(readSharedPref("lastName"))
         editTextEmail.setText(readSharedPref("email"))
         editTextAddress.setText(readSharedPref("address"))
-        editTextPostalCode.setText(readSharedPref("postalCode"))
+        editTextZipCode.setText(readSharedPref("zipcode"))
         editTextCity.setText(readSharedPref("city"))
-        editTextFidelityCard.setText(readSharedPref("fidelityCard"))
+        editTextCardRef.setText(readSharedPref("cardRef"))
 
         if (
             !receivedBooleanCreateAccountForm
@@ -53,20 +53,20 @@ class AccountCreationFormActivity : BaseActivity() {
 
         buttonCreate.setOnClickListener {
             if (editTextFirstName.length() != 0 &&
-                editTextName.length() != 0 &&
+                editTextLastName.length() != 0 &&
                 editTextEmail.length() != 0 &&
                 editTextAddress.length() != 0 &&
-                editTextPostalCode.length() != 0 &&
+                editTextZipCode.length() != 0 &&
                 editTextCity.length() != 0 &&
-                editTextFidelityCard.length() != 0
+                editTextCardRef.length() != 0
             ) {
             writeSharedPref("firstName", editTextFirstName.text.toString())
-            writeSharedPref("name", editTextName.text.toString())
+            writeSharedPref("lastName", editTextLastName.text.toString())
             writeSharedPref("email", editTextEmail.text.toString())
             writeSharedPref("address", editTextAddress.text.toString())
-            writeSharedPref("postalCode", editTextPostalCode.text.toString())
+            writeSharedPref("zipcode", editTextZipCode.text.toString())
             writeSharedPref("city", editTextCity.text.toString())
-            writeSharedPref("fidelityCard", editTextFidelityCard.text.toString())
+            writeSharedPref("cardRef", editTextCardRef.text.toString())
 
             startActivity(Intent(this,HomeActivity::class.java))
             finish()
