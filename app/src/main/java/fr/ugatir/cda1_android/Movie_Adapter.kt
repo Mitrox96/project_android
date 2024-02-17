@@ -1,4 +1,3 @@
-// MovieAdapter.kt
 package fr.ugatir.cda1_android
 
 import android.view.LayoutInflater
@@ -27,10 +26,8 @@ class MovieAdapter(private val moviesList: List<Movie>) :
     override fun onBindViewHolder(holder: MovieViewHolder, position: Int) {
         val currentMovie = moviesList[position]
 
-        // Charger l'image avec Picasso
         Picasso.get().load(currentMovie.graphicUrl).into(holder.imageView)
 
-        // Mettre à jour le titre
         holder.titleTextView.text = currentMovie.title
     }
 
