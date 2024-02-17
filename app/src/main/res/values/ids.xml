@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="addToCartButton" type="id" />
+    <item name="durationTextView" type="id" />
+    <item name="descriptionTextView" type="id" />
+    <item name="imageViewFilm" type="id" />
+    <item name="imageViewBackground" type="id" />
+</resources>

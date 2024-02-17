@@ -6,7 +6,6 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.Picasso
-import fr.ugatir.cda1_android.Movie
 import fr.ugatir.cda1_android.MovieAdapter
 import fr.ugatir.cda1_android.R
 import kotlinx.coroutines.Dispatchers

@@ -37,4 +37,8 @@
     <string name="movies">Films</string>
     <string name="firtName">Prénom</string>
     <string name="lastName">Nom</string>
+    <string name="add_to_cart" />
+    <string name="film_details" />
+    <string name="back_arrow_description" />
+    <string name="retour_description" />
 </resources>
