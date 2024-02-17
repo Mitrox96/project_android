@@ -5,9 +5,10 @@ import android.os.Bundle
 import android.widget.ImageView
 import android.widget.TextView
 
+
 class HomeActivity : BaseActivity() {
 
-    val moviesHomeFragment= MoviesHomeFragment.newInstance("","")
+    val moviesHomeFragment= MoviesHomeFragment.newInstance()
     val roomHomeFragment = RoomHomeFragment.newInstance("","")
     val myCardHomeFragment = MyCardHomeFragment.newInstance("","")
     val cartHomeFragment= CartHomeFragment.newInstance("","")

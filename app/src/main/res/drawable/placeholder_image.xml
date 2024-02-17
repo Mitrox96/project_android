@@ -1,0 +1,8 @@
+<!-- res/drawable/placeholder_image.xml -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@color/colorPlaceholderBackground" />
+    <item
+        android:width="48dp"
+        android:height="48dp"
+        android:drawable="@drawable/ic_placeholder" />
+</layer-list>
