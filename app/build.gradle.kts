@@ -56,7 +56,10 @@ dependencies {
     implementation ("com.squareup.picasso:picasso:2.71828")
     implementation ("androidx.recyclerview:recyclerview:1.2.1")
     implementation ("com.google.code.gson:gson:2.8.8")
-
+    implementation ("com.squareup.okhttp3:okhttp:4.9.0")
+    implementation ("org.mapsforge:mapsforge-core:0.15.0")
+    implementation ("org.mapsforge:mapsforge-map-android:0.15.0")
+    implementation ("org.osmdroid:osmdroid-android:6.1.10")
 
 
 
