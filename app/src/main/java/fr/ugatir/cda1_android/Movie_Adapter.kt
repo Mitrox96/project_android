@@ -1,6 +1,5 @@
 package fr.ugatir.cda1_android
 
-import DetailsFilmActivity
 import Movie
 import android.content.Context
 import android.content.Intent

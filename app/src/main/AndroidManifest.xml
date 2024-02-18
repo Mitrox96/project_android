@@ -22,12 +22,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.DefaultTheme"
         tools:targetApi="31">
-        <activity
-            android:name=".GenerateQRActivity"
-            android:exported="false" />
-        <activity
-            android:name=".QrCodeActivity"
-            android:exported="false" />
+
         <activity
             android:name=".ScannerQrCodeActivity"
             android:exported="false"
@@ -46,30 +41,16 @@
             android:value="AIzaSyAdwxyyyZSkEgW97DZxS6ev2KRpruYeTlQ" />
 
         <activity
-            android:name=".InfoActivity"
-            android:exported="false" />
-        <activity
-            android:name=".StudentWsActivity"
-            android:exported="false" />
-        <activity
-            android:name=".StudentActivity"
-            android:exported="false" />
-        <activity
-            android:name=".LoginActivity"
-            android:exported="false" />
-        <activity
-            android:name=".RollDiceActivity"
-            android:exported="false" />
-        <activity
             android:name=".HomeActivity"
             android:exported="false"
             android:screenOrientation="portrait" />
-        <activity
-            android:name=".DetailsFilmActivity"
-            android:exported="false"/>
-        <activity
-            android:name=".ImageActivity"
-            android:exported="false" />
+
+    <activity
+        android:name=".DetailsFilmActivity"
+        android:exported="false"
+        android:screenOrientation="portrait"
+        />
+
         <activity
             android:name=".SplashActivity"
             android:exported="true"
@@ -80,9 +61,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".PhotosActivity"
-            android:exported="false" />
-    </application>
 
+</application>
 </manifest>
