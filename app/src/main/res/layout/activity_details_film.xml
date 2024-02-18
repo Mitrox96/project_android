@@ -15,17 +15,15 @@
         android:layout_marginTop="16dp" />
 
 
-
     <ImageView
         android:id="@+id/imageViewBackArrow"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/retour"
-        android:layout_marginTop="16dp"
+        android:layout_width="36dp"
+        android:layout_height="54dp"
         android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
         android:contentDescription="@string/retour_description"
-        android:onClick="onBackPressed" />
-
+        android:onClick="onBackPressed"
+        android:src="@drawable/retour" />
 
     <TextView
         android:id="@+id/textViewTitle"
@@ -47,14 +45,14 @@
         android:layout_marginTop="16dp"
         android:scaleType="centerCrop" />
 
+
     <TextView
         android:id="@+id/durationTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Durée du film"
         android:layout_below="@id/imageViewFilm"
-        android:layout_marginTop="16dp" />
-
+        android:layout_marginTop="46dp"
+        android:text="Durée du film" />
 
     <TextView
         android:id="@+id/descriptionTextView"
