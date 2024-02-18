@@ -21,23 +21,19 @@ Partie entièrement fonctionnelle (première page du pdf) fait par Damien LOUBIO
 
 Deuxième partie (deuxième page du pdf) fait par Dorian GRONER, Mateo LO PINTO, Noah PIESSE
 -------------------------------------------------------
-Des problèmes ont été rencontrés sur la deuxième partie du projet dû à une mauvaise organisations. En théorie fonctionnelle.
-
-- 4 fragments relié à la HomeActivity
 - Design complété
-- Page qui fait appel au webservice pour avoir les films et leurs détails
-- Map avec les salles de cinéma redirection vers une page détails, et bouton retour si besoin
+- Page qui fait appel au webservice pour avoir les films et leurs détails dans une autre activité qui permet d'ajouter au panier les films avec un bouton de retour si besoin, un adapter est présent aussi.
+- ( La Map est la seule partie non fonctionnel, elle fait crasher l'application mais ne pose pas de problème de compilation pour autant ) Map avec les salles de cinéma redirection vers une page détails, et bouton retour si besoin 
 - Page afficher logo avec des données préfaites car problème de compréhension de la bibliothèque
-- Page panier avec les salles ajoutées.
+- Page panier avec les films ajoutées qui peuvent être supprimer
 - Nettoyage de l'app
-
-Pour avoir la partie fonctionnelle, voir les commits qui datent du 4 février ou moins de Damien (nom des participants et travail réalisé ci-dessous.)
 ---------------------------------------------------------------------------------------------------------------------------------------------------
 
 Mitrox96 = Damien LOUBIOU : **première partie** (Splash + page création compte + remplir formulaire manuellement + scan qrcode + modifier compte + design + home(bouton modifier compte))
 
 Matelop132 = Matéo LO PINTO : **deuxième partie**  (Logo + nettoyage + afficher qrcode + fragment correspondant)
 
-Dorianov = Dorian GRONER: **deuxième partie** (Finition webservice + Panier + Design + résolution de bugs + fragments + details)
+Dorianov = Dorian GRONER: **deuxième partie** (MoviesHomeFragment + Movie + Movieadapter + DetailsFilm + CarthomeFragment et les Xml reliés)
 
-Noah PIESSE pas précisé sur les commits car sa partie a été envoyée à Dorian à cause de problèmes techniques, donc Dorian a push sa partie et celle de Noah) : **deuxième partie** (Map + details + webservice + fragments)
+Santana64 = Noah Piesse: **deuxième partie** (Map + appel webservice etc...)
+
