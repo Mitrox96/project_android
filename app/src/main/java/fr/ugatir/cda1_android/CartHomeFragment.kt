@@ -30,33 +30,43 @@ class CartHomeFragment : Fragment() {
     ): View? {
         val view = inflater.inflate(R.layout.fragment_cart_home, container, false)
         val cartLayout = view.findViewById<LinearLayout>(R.id.cartLayout)
+        val emptyCartMessage = view.findViewById<TextView>(R.id.emptyCartMessage)
 
         val sharedPreferences = requireContext().getSharedPreferences("panier", Context.MODE_PRIVATE)
         val cartItemsJson = sharedPreferences.all.values
         val gson = Gson()
 
-        val inflater = LayoutInflater.from(requireContext())
-        cartItemsJson.forEach { itemJson ->
-            val item = gson.fromJson(itemJson.toString(), Movie::class.java)
-            cartItems.add(item)
-            val itemView = inflater.inflate(R.layout.cart_item_layout, cartLayout, false)
+        // Vérifiez si le panier est vide et configurez le texte en conséquence
+        if (cartItemsJson.isEmpty()) {
+            emptyCartMessage.text = "Votre panier est vide"
+            emptyCartMessage.visibility = View.VISIBLE
+        } else {
+            emptyCartMessage.visibility = View.GONE
 
-            val imageView = itemView.findViewById<ImageView>(R.id.imageViewCartItem)
-            val titleTextView = itemView.findViewById<TextView>(R.id.titleTextView)
-            val descriptionTextView = itemView.findViewById<TextView>(R.id.descriptionTextView)
-            val deleteButton = itemView.findViewById<Button>(R.id.deleteButton)
+            val inflater = LayoutInflater.from(requireContext())
+            cartItemsJson.forEach { itemJson ->
+                val item = gson.fromJson(itemJson.toString(), Movie::class.java)
+                cartItems.add(item)
+                val itemView = inflater.inflate(R.layout.cart_item_layout, cartLayout, false)
 
-            Picasso.get().load(item.graphicUrl).resize(120, 120).centerCrop().into(imageView)
-            titleTextView.text = item.title
-            descriptionTextView.text = item.description
+                // Configurez les vues pour afficher les détails de l'article
+                val imageView = itemView.findViewById<ImageView>(R.id.imageViewCartItem)
+                val titleTextView = itemView.findViewById<TextView>(R.id.titleTextView)
+                val descriptionTextView = itemView.findViewById<TextView>(R.id.descriptionTextView)
+                val deleteButton = itemView.findViewById<Button>(R.id.deleteButton)
 
-            deleteButton.setOnClickListener {
-                removeItemFromCart(item)
-                Toast.makeText(requireContext(), "Film supprimé du panier", Toast.LENGTH_SHORT).show()
-                refreshCartView(cartLayout)
+                Picasso.get().load(item.graphicUrl).resize(120, 120).centerCrop().into(imageView)
+                titleTextView.text = item.title
+                descriptionTextView.text = item.description
+
+                deleteButton.setOnClickListener {
+                    removeItemFromCart(item)
+                    Toast.makeText(requireContext(), "Film supprimé du panier", Toast.LENGTH_SHORT).show()
+                    refreshCartView(cartLayout, emptyCartMessage)
+                }
+
+                cartLayout.addView(itemView)
             }
-
-            cartLayout.addView(itemView)
         }
 
         return view
@@ -70,13 +80,14 @@ class CartHomeFragment : Fragment() {
         cartItems.remove(item)
     }
 
-    private fun refreshCartView(cartLayout: LinearLayout) {
+    private fun refreshCartView(cartLayout: LinearLayout, emptyCartMessage: TextView) {
         cartLayout.removeAllViews()
 
         val inflater = LayoutInflater.from(requireContext())
         cartItems.forEach { item ->
             val itemView = inflater.inflate(R.layout.cart_item_layout, cartLayout, false)
 
+            // Configurez les vues pour afficher les détails de l'article
             val imageView = itemView.findViewById<ImageView>(R.id.imageViewCartItem)
             val titleTextView = itemView.findViewById<TextView>(R.id.titleTextView)
             val descriptionTextView = itemView.findViewById<TextView>(R.id.descriptionTextView)
@@ -89,10 +100,18 @@ class CartHomeFragment : Fragment() {
             deleteButton.setOnClickListener {
                 removeItemFromCart(item)
                 Toast.makeText(requireContext(), "Film supprimé du panier", Toast.LENGTH_SHORT).show()
-                refreshCartView(cartLayout)
+                refreshCartView(cartLayout, emptyCartMessage)
             }
 
             cartLayout.addView(itemView)
+        }
+
+        // Mettre à jour la visibilité du message en fonction du contenu du panier
+        if (cartItems.isEmpty()) {
+            emptyCartMessage.text = "Votre panier est vide"
+            emptyCartMessage.visibility = View.VISIBLE
+        } else {
+            emptyCartMessage.visibility = View.GONE
         }
     }
 }
