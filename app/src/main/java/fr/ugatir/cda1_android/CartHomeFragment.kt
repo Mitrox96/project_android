@@ -36,7 +36,6 @@ class CartHomeFragment : Fragment() {
         val cartItemsJson = sharedPreferences.all.values
         val gson = Gson()
 
-        // Vérifiez si le panier est vide et configurez le texte en conséquence
         if (cartItemsJson.isEmpty()) {
             emptyCartMessage.text = "Votre panier est vide"
             emptyCartMessage.visibility = View.VISIBLE
@@ -49,7 +48,6 @@ class CartHomeFragment : Fragment() {
                 cartItems.add(item)
                 val itemView = inflater.inflate(R.layout.cart_item_layout, cartLayout, false)
 
-                // Configurez les vues pour afficher les détails de l'article
                 val imageView = itemView.findViewById<ImageView>(R.id.imageViewCartItem)
                 val titleTextView = itemView.findViewById<TextView>(R.id.titleTextView)
                 val descriptionTextView = itemView.findViewById<TextView>(R.id.descriptionTextView)
@@ -72,6 +70,11 @@ class CartHomeFragment : Fragment() {
         return view
     }
 
+    override fun onResume() {
+        super.onResume()
+        refreshCartView(view?.findViewById(R.id.cartLayout), view?.findViewById(R.id.emptyCartMessage))
+    }
+
     private fun removeItemFromCart(item: Movie) {
         val sharedPreferences = requireContext().getSharedPreferences("panier", Context.MODE_PRIVATE)
         val editor = sharedPreferences.edit()
@@ -80,14 +83,13 @@ class CartHomeFragment : Fragment() {
         cartItems.remove(item)
     }
 
-    private fun refreshCartView(cartLayout: LinearLayout, emptyCartMessage: TextView) {
-        cartLayout.removeAllViews()
+    private fun refreshCartView(cartLayout: LinearLayout?, emptyCartMessage: TextView?) {
+        cartLayout?.removeAllViews()
 
         val inflater = LayoutInflater.from(requireContext())
         cartItems.forEach { item ->
             val itemView = inflater.inflate(R.layout.cart_item_layout, cartLayout, false)
 
-            // Configurez les vues pour afficher les détails de l'article
             val imageView = itemView.findViewById<ImageView>(R.id.imageViewCartItem)
             val titleTextView = itemView.findViewById<TextView>(R.id.titleTextView)
             val descriptionTextView = itemView.findViewById<TextView>(R.id.descriptionTextView)
@@ -103,15 +105,14 @@ class CartHomeFragment : Fragment() {
                 refreshCartView(cartLayout, emptyCartMessage)
             }
 
-            cartLayout.addView(itemView)
+            cartLayout?.addView(itemView)
         }
 
-        // Mettre à jour la visibilité du message en fonction du contenu du panier
         if (cartItems.isEmpty()) {
-            emptyCartMessage.text = "Votre panier est vide"
-            emptyCartMessage.visibility = View.VISIBLE
+            emptyCartMessage?.text = "Votre panier est vide"
+            emptyCartMessage?.visibility = View.VISIBLE
         } else {
-            emptyCartMessage.visibility = View.GONE
+            emptyCartMessage?.visibility = View.GONE
         }
     }
 }

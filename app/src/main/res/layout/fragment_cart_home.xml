@@ -15,7 +15,6 @@
 
     </LinearLayout>
 
-    <!-- Add the empty cart message TextView -->
     <TextView
         android:id="@+id/emptyCartMessage"
         android:layout_width="wrap_content"
