@@ -1,3 +1,6 @@
+package fr.ugatir.cda1_android
+
+import Movie
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
@@ -8,9 +11,10 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.gson.Gson
 import com.squareup.picasso.Picasso
+import fr.ugatir.cda1_android.BaseActivity
 import fr.ugatir.cda1_android.R
 
-class DetailsFilmActivity : AppCompatActivity() {
+class DetailsFilmActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_details_film)
