@@ -1,10 +1,10 @@
 package fr.ugatir.cda1_android
 
+import android.view.animation.AnimationUtils
 import android.content.Intent
 import android.os.Bundle
 import android.widget.ImageView
 import android.widget.TextView
-
 
 class HomeActivity : BaseActivity() {
 
@@ -45,6 +45,7 @@ class HomeActivity : BaseActivity() {
 
         cartHomeFragment.setOnClickListener {
             showCartHomeFragment()
+
         }
     }
 
@@ -52,8 +53,12 @@ class HomeActivity : BaseActivity() {
       val frManager=supportFragmentManager
       val fragmentTra= frManager.beginTransaction()
       fragmentTra.addToBackStack("Tab2")
+      val textView = findViewById<TextView>(R.id.textViewMovies)
+      val animation = AnimationUtils.loadAnimation(this, R.anim.animationbutton)
+      textView.startAnimation(animation)
       fragmentTra.replace(R.id.layoutHome,moviesHomeFragment)
       fragmentTra.commit()
+
   }
 
     fun showRommHomeFragment(){
@@ -61,6 +66,9 @@ class HomeActivity : BaseActivity() {
       val fragmentTra= frManager.beginTransaction()
       fragmentTra.addToBackStack("Tab2")
       fragmentTra.replace(R.id.layoutHome,roomHomeFragment)
+      val textView = findViewById<TextView>(R.id.textViewRoomHomeFragment)
+      val animation = AnimationUtils.loadAnimation(this, R.anim.animationbutton)
+      textView.startAnimation(animation)
       fragmentTra.commit()
   }
 
@@ -68,6 +76,9 @@ class HomeActivity : BaseActivity() {
         val frManager=supportFragmentManager
         val fragmentTra= frManager.beginTransaction()
         fragmentTra.addToBackStack("MyCardHomeFragment")
+        val textView = findViewById<TextView>(R.id.textViewMyCard)
+        val animation = AnimationUtils.loadAnimation(this, R.anim.animationbutton)
+        textView.startAnimation(animation)
         fragmentTra.replace(R.id.layoutHome,myCardHomeFragment)
         fragmentTra.commit()
     }
@@ -76,6 +87,9 @@ class HomeActivity : BaseActivity() {
         val frManager=supportFragmentManager
         val fragmentTra= frManager.beginTransaction()
         fragmentTra.addToBackStack("Tab3")
+        val textView = findViewById<TextView>(R.id.textViewCartHomeFragment)
+        val animation = AnimationUtils.loadAnimation(this, R.anim.animationbutton)
+        textView.startAnimation(animation)
         fragmentTra.replace(R.id.layoutHome,cartHomeFragment)
         fragmentTra.commit()
     }
