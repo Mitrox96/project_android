@@ -7,12 +7,15 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.google.gson.Gson
 import com.squareup.picasso.Picasso
 import fr.ugatir.cda1_android.R
 
 class CartHomeFragment : Fragment() {
+    private val cartItems = mutableListOf<Movie>()
+
     companion object {
         @JvmStatic
         fun newInstance() = CartHomeFragment().apply {
@@ -35,6 +38,7 @@ class CartHomeFragment : Fragment() {
         val inflater = LayoutInflater.from(requireContext())
         cartItemsJson.forEach { itemJson ->
             val item = gson.fromJson(itemJson.toString(), Movie::class.java)
+            cartItems.add(item)
             val itemView = inflater.inflate(R.layout.cart_item_layout, cartLayout, false)
 
             val imageView = itemView.findViewById<ImageView>(R.id.imageViewCartItem)
@@ -47,12 +51,48 @@ class CartHomeFragment : Fragment() {
             descriptionTextView.text = item.description
 
             deleteButton.setOnClickListener {
-
+                removeItemFromCart(item)
+                Toast.makeText(requireContext(), "Film supprimé du panier", Toast.LENGTH_SHORT).show()
+                refreshCartView(cartLayout)
             }
-            
+
             cartLayout.addView(itemView)
         }
 
         return view
+    }
+
+    private fun removeItemFromCart(item: Movie) {
+        val sharedPreferences = requireContext().getSharedPreferences("panier", Context.MODE_PRIVATE)
+        val editor = sharedPreferences.edit()
+        editor.remove(item.id.toString())
+        editor.apply()
+        cartItems.remove(item)
+    }
+
+    private fun refreshCartView(cartLayout: LinearLayout) {
+        cartLayout.removeAllViews()
+
+        val inflater = LayoutInflater.from(requireContext())
+        cartItems.forEach { item ->
+            val itemView = inflater.inflate(R.layout.cart_item_layout, cartLayout, false)
+
+            val imageView = itemView.findViewById<ImageView>(R.id.imageViewCartItem)
+            val titleTextView = itemView.findViewById<TextView>(R.id.titleTextView)
+            val descriptionTextView = itemView.findViewById<TextView>(R.id.descriptionTextView)
+            val deleteButton = itemView.findViewById<Button>(R.id.deleteButton)
+
+            Picasso.get().load(item.graphicUrl).resize(120, 120).centerCrop().into(imageView)
+            titleTextView.text = item.title
+            descriptionTextView.text = item.description
+
+            deleteButton.setOnClickListener {
+                removeItemFromCart(item)
+                Toast.makeText(requireContext(), "Film supprimé du panier", Toast.LENGTH_SHORT).show()
+                refreshCartView(cartLayout)
+            }
+
+            cartLayout.addView(itemView)
+        }
     }
 }
