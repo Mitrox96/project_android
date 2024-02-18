@@ -1,59 +1,65 @@
-package fr.ugatir.cda1_android
-
+import android.content.Context
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
+import android.widget.LinearLayout
+import android.widget.TextView
+import androidx.fragment.app.Fragment
+import com.google.gson.Gson
+import com.squareup.picasso.Picasso
+import fr.ugatir.cda1_android.R
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [CartHomeFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class CartHomeFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+    companion object {
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
+        @JvmStatic
+        fun newInstance() =
+            CartHomeFragment().apply {
+                arguments = Bundle().apply {
+
+                }
+            }
     }
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+        inflater: LayoutInflater,
+        container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_cart_home, container, false)
-    }
+        val view = inflater.inflate(R.layout.fragment_cart_home, container, false)
+        val cartLayout = view.findViewById<LinearLayout>(R.id.cartLayout)
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment CartHomeFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            CartHomeFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
+
+        val sharedPreferences = requireContext().getSharedPreferences("panier", Context.MODE_PRIVATE)
+        val cartItemsJson = sharedPreferences.all.values
+        val gson = Gson()
+
+        if (cartItemsJson.isEmpty()) {
+            val messageTextView = TextView(requireContext())
+            messageTextView.text = "Votre panier est vide"
+            messageTextView.textAlignment = TextView.TEXT_ALIGNMENT_CENTER
+            cartLayout.addView(messageTextView)
+        } else {
+            cartItemsJson.forEach { itemJson ->
+                val item = gson.fromJson(itemJson.toString(), Movie::class.java)
+
+                val itemView = inflater.inflate(R.layout.cart_item_layout, cartLayout, false)
+
+                val imageView = itemView.findViewById<ImageView>(R.id.imageViewCartItem)
+                val titleTextView = itemView.findViewById<TextView>(R.id.titleTextView)
+                val descriptionTextView = itemView.findViewById<TextView>(R.id.descriptionTextView)
+
+                Picasso.get().load(item.graphicUrl).resize(120, 120).centerCrop().into(imageView)
+
+                titleTextView.text = item.title
+                descriptionTextView.text = item.description
+
+                cartLayout.addView(itemView)
             }
+        }
+
+        return view
     }
 }

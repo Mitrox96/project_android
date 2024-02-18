@@ -1,9 +1,12 @@
+import android.content.Context
+import android.content.Intent
 import android.os.Bundle
-import android.view.View
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.google.gson.Gson
 import com.squareup.picasso.Picasso
 import fr.ugatir.cda1_android.R
 
@@ -12,32 +15,52 @@ class DetailsFilmActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_details_film)
 
-        // Récupérer les données du film depuis l'intent
         val movie = intent.getParcelableExtra<Movie>("movie")
 
-        // Afficher les détails du film
-        val imageView: ImageView = findViewById(R.id.imageViewFilm)
-        Picasso.get().load(movie?.graphicUrl).into(imageView)
+        if (movie != null) {
 
-        val titleTextView: TextView = findViewById(R.id.titleTextView)
-        titleTextView.text = movie?.title
+            val imageView: ImageView = findViewById(R.id.imageViewFilm)
+            Picasso.get().load(movie.graphicUrl).into(imageView)
 
-        val durationTextView: TextView = findViewById(R.id.durationTextView)
-        durationTextView.text = "Durée: ${movie?.runTime} minutes"
+            val titleTextView: TextView = findViewById(R.id.titleTextView)
+            titleTextView.text = movie.title
 
-        val descriptionTextView: TextView = findViewById(R.id.descriptionTextView)
-        descriptionTextView.text = movie?.description
+            val durationTextView: TextView = findViewById(R.id.durationTextView)
+            durationTextView.text = "Durée: ${movie.runTime} minutes"
 
-        val addToCartButton: Button = findViewById(R.id.addToCartButton)
-        addToCartButton.setOnClickListener {
-            // Ajouter la logique pour ajouter le film au panier
-            // ...
+            val descriptionTextView: TextView = findViewById(R.id.descriptionTextView)
+            descriptionTextView.text = movie.description
+
+            val addToCartButton: Button = findViewById(R.id.addToCartButton)
+            addToCartButton.setOnClickListener {
+
+                addToCart(movie)
+            }
+        } else {
+
+            Toast.makeText(this, "Erreur: Aucun film trouvé", Toast.LENGTH_SHORT).show()
+            finish()
         }
 
-        // Écouteur de clic sur la flèche de retour
         val backArrowImageView: ImageView = findViewById(R.id.imageViewBackArrow)
         backArrowImageView.setOnClickListener {
             onBackPressed()
         }
+    }
+
+    private fun addToCart(movie: Movie) {
+
+        val sharedPreferences = getSharedPreferences("panier", Context.MODE_PRIVATE)
+        val editor = sharedPreferences.edit()
+
+
+        val gson = Gson()
+        val movieJson = gson.toJson(movie)
+
+
+        editor.putString("film_${movie.id}", movieJson)
+        editor.apply()
+
+        Toast.makeText(this, "Film ajouté au panier", Toast.LENGTH_SHORT).show()
     }
 }

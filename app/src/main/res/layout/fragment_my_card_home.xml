@@ -28,7 +28,7 @@
             android:text="@string/firtName" />
 
     </LinearLayout>
-    <!-- TODO: Update blank fragment layout -->
+
     <ImageView
         android:id="@+id/imageViewMyCard"
         android:layout_width="match_parent"

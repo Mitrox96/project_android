@@ -11,7 +11,7 @@ class HomeActivity : BaseActivity() {
     val moviesHomeFragment= MoviesHomeFragment.newInstance()
     val roomHomeFragment = RoomHomeFragment.newInstance("","")
     val myCardHomeFragment = MyCardHomeFragment.newInstance("","")
-    val cartHomeFragment= CartHomeFragment.newInstance("","")
+    val cartHomeFragment= CartHomeFragment.newInstance()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
